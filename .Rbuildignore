@@ -1,0 +1,8 @@
+^LICENSE\.md$
+^Makefile$
+^README\.Rmd$
+^inst/extdata/.*\.png$
+^README\.md$
+^CONDUCT\.md$
+^\.Rproj\.user$
+^\.Rproj$
