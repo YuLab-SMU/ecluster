@@ -26,6 +26,7 @@ setGeneric('eclust', function(
 ##' @importClassesFrom SummarizedExperiment SummarizedExperiment
 ##' @importFrom rlang enquo quo_is_missing get_expr
 ##' @importFrom SummarizedExperiment assay
+##' @importFrom methods new
 setMethod('eclust', signature(.data = 'SummarizedExperiment'),
    function(.data, 
             .assay, 
@@ -58,6 +59,18 @@ setMethod('eclust', signature(.data = 'SummarizedExperiment'),
    }
 )
 
-
+##' @rdname eclust-methods
+##' @aliases eclust,RangedSummarizedExperiment
+##' @importFrom methods callNextMethod
+##' @exportMethod eclust
+setMethod('eclust', signature(.data = 'RangedSummarizedExperiment'),
+   function(.data, 
+            .assay, 
+            dist.method = 'euclidean', 
+            hclust.method = 'average', 
+            direction = 'col',
+            ...){
+        callNextMethod()
+})
 
 

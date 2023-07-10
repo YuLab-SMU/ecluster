@@ -1,17 +1,24 @@
 Package: eclust
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: GPL (>= 3)
+Title: Base Classes and Functions for Clustering Experimental Assays
+Version: 0.0.2
+Authors@R: c(
+    person("Guangchuang", "Yu",     email = "guangchuangyu@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-6485-8781")),
+    person("Shuangbin", "Xu",       email = "xshuangbin@163.com",      role = "aut",           comment = c(ORCID="0000-0003-3513-5362"))
+	  )
+Description: Defines 'eclust' class to store experimental assays and hierachical result. Based on this 'eclust' class, the package provides a uniform interface for integrating meta data (i.e., sample or feature information) to hierachical clustering tree. It also provides a set of utilities for exploring and visualizing these information based on 'ggtree'.
+Imports:
+    methods, 
+    rlang,
+    SummarizedExperiment,
+    stats,
+    tibble,
+    tidyselect,
+    tidytree,
+    tidyr,
+    treeio
+Suggests:
+    SingleCellExperiment
+License: Artistic-2.0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-Imports:
-    stats,
-    methods, 
-    SummarizedExperiment,
-    SingleCellExperiment,
-    rlang

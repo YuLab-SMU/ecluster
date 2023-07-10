@@ -6,7 +6,7 @@ NULL
 
 #' @rdname eclust-accessors
 #' @export
-setGeneric("colhclust", function(x, ...)standardGeneric('colhclust'))
+setGeneric("colhclust", function(x, ...) standardGeneric('colhclust'))
 
 #' @rdname eclust-accessors
 #' @aliases colhclust,eclust
@@ -18,7 +18,7 @@ setMethod('colhclust', signature(x = 'eclust'),
 
 #' @rdname eclust-accessors
 #' @export
-setGeneric("rowhclust", function(x, ...)standardGeneric('rowhclust'))
+setGeneric("rowhclust", function(x, ...) standardGeneric('rowhclust'))
 
 #' @rdname eclust-accessors
 #' @aliases rowhclust,eclust
@@ -32,7 +32,7 @@ setMethod('rowhclust', signature(x = 'eclust'),
 #' @param x R object, here is eclust class
 #' @param value hclust or NULL
 #' @export
-setGeneric("colhclust<-", function(x, ..., value)standardGeneric('colhclust<-'))
+setGeneric("colhclust<-", function(x, ..., value) standardGeneric('colhclust<-'))
 
 #' @rdname eclust-accessors
 #' @aliases colhclust<-,eclust,hclust_or_NULL
@@ -47,7 +47,7 @@ setReplaceMethod('colhclust', signature(x = 'eclust', value = 'hclust_or_NULL'),
 #' @param x R object, here is eclust class
 #' @param value hclust or NULL
 #' @export
-setGeneric("rowhclust<-", function(x, ..., value)standardGeneric('rowhclust<-'))
+setGeneric("rowhclust<-", function(x, ..., value) standardGeneric('rowhclust<-'))
 
 #' @rdname eclust-accessors
 #' @aliases rowhclust<-,eclust,hclust_or_NULL

@@ -4,6 +4,8 @@
 \alias{eclust}
 \alias{eclust,SummarizedExperiment-method}
 \alias{eclust,SummarizedExperiment}
+\alias{eclust,RangedSummarizedExperiment-method}
+\alias{eclust,RangedSummarizedExperiment}
 \title{Hierarchical cluster analysis for the sample or features with SummarizedExperiment class}
 \usage{
 eclust(
@@ -16,6 +18,15 @@ eclust(
 )
 
 \S4method{eclust}{SummarizedExperiment}(
+  .data,
+  .assay,
+  dist.method = "euclidean",
+  hclust.method = "average",
+  direction = "col",
+  ...
+)
+
+\S4method{eclust}{RangedSummarizedExperiment}(
   .data,
   .assay,
   dist.method = "euclidean",
