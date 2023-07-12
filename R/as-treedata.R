@@ -25,10 +25,14 @@ as.treedata.eclust2 <- function(
     .data,
     bycol = TRUE,
     assay = 1,
-    longer = FALSE,
+    longer = TRUE,
     metadata = TRUE) {
-
-    da <- assay(.data, assay) |> data.frame() |> rownames_to_column(var = "label")
+    
+    da <- assay(.data, assay) 
+    if (bycol){
+       da <- t(da)
+    }
+    da <- da |> data.frame() |> rownames_to_column(var = 'label')
 
     if (is.null(assayNames(.data)[assay])) {
         name <- 'counts'
@@ -39,11 +43,11 @@ as.treedata.eclust2 <- function(
     if (bycol) {
         ph <- colhclust(.data) |> as.phylo()
         md <- colData(.data)
-        names_to <- "sample"
+        names_to <- "feature"
     } else {
         ph <- rowhclust(.data) |> as.phylo()
         md <- rowData(.data)
-        names_to <- 'feature'
+        names_to <- 'sample'
     }
 
     if (longer) {
@@ -56,11 +60,11 @@ as.treedata.eclust2 <- function(
                                     tidyselect::all_of(name)))
     }
 
-    treedata <- treedata(phylo = ph) |> left_join(da)
+    treedata <- treedata(phylo = ph) |> left_join(da, by='label')
 
     if (metadata) {
         md <- data.frame(md) |> rownames_to_column(var = "label")
-        treedata <- left_join(treedata, md)
+        treedata <- left_join(treedata, md, by='label')
     }
 
     return(treedata)
