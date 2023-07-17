@@ -1,4 +1,4 @@
-Package: eclust
+Package: ecluster
 Title: Base Classes and Functions for Clustering Experimental Assays
 Version: 0.0.2
 Authors@R: c(
